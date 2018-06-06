@@ -1,0 +1,133 @@
+<div class="row">
+  <div class="card-panel pt-15">
+    <p class="border-bottom filter-heading">
+      <span>Filters</span>
+      <span class="pink-text text-darken-4 cursor-pointer" (click)="clearAll()">CLEAR ALL</span>
+    </p>
+    <ul class="filters-values">
+      <li *ngIf="applyFilter.genderFilter">
+        {{applyFilter.genderFilter}}
+        <i class="material-icons Small" (click)="emptyModel('genderFilter')">clear</i>
+      </li>
+      <li *ngIf="applyFilter.silhouetteFilter">
+        {{applyFilter.silhouetteFilter}}
+        <i class="material-icons Small" (click)="emptyModel('silhouetteFilter')">clear</i>
+      </li>
+      <li *ngFor="let value of applyFilter.subSilhouetteFilter">
+        {{value}}
+        <i class="material-icons Small" (click)="selectValue('subSilhouetteFilter',value)">clear</i>
+      </li>
+      <li *ngFor="let value of applyFilter.discountFilter">
+        {{value}}
+        <i class="material-icons Small" (click)="selectValue('discountFilter',value)">clear</i>
+      </li>
+      <li *ngFor="let value of applyFilter.patternFilter">
+        {{value}}
+        <i class="material-icons Small" (click)="selectValue('patternFilter',value)">clear</i>
+      </li>
+      <li *ngFor="let value of applyFilter.primaryColorFilter">
+        {{value}}
+        <i class="material-icons Small" (click)="selectValue('primaryColorFilter',value)">clear</i>
+      </li>
+      <li *ngFor="let value of applyFilter.fabricFilter">
+        {{value}}
+        <i class="material-icons Small" (click)="selectValue('fabricFilter',value)">clear</i>
+      </li>
+      <li *ngIf="applyFilter.highPriceFilter && applyFilter.lowPriceFilter">
+        {{applyFilter.highPriceFilter}} - {{applyFilter.lowPriceFilter}}
+        <i class="material-icons Small" (click)="clearPrice()">clear</i>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<mat-accordion class="text-capitlize">
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Gender
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-panel-description>
+      <span>
+        <mat-radio-group class="example-radio-group" [(ngModel)]="applyFilter.genderFilter" (change)="slelectForRadio('genderFilter', $event)">
+          <p *ngFor="let genderFilter of filters.genderFilter">
+            <mat-radio-button class="example-radio-button" [value]="genderFilter">
+              {{genderFilter}}
+            </mat-radio-button>
+          </p>
+        </mat-radio-group>
+      </span>
+    </mat-panel-description>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Category
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-panel-description>
+      <mat-radio-group class="example-radio-group" [(ngModel)]="applyFilter.silhouetteFilter" (change)="slelectForRadio('silhouetteFilter', $event)">
+        <p *ngFor="let categoryFilter of filters.silhouetteFilter">
+          <mat-radio-button class="example-radio-button" [value]="categoryFilter">
+            {{categoryFilter}}
+          </mat-radio-button>
+        </p>
+      </mat-radio-group>
+    </mat-panel-description>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>sub Category Filter</mat-expansion-panel-header>
+    <mat-panel-description class="filter-checkox">
+      <mat-checkbox *ngFor="let value of filters.subSilhouetteFilter" (click)="selectValue('subSilhouetteFilter',value)">{{value}}</mat-checkbox>
+    </mat-panel-description>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>Price (Rs.)</mat-expansion-panel-header>
+    <div class="row">
+      <input class="col s5 md-10" placeholder="Low Price" maxlength="5" #lowPriceFilter/>
+      <input class="col s5 md-10" placeholder="High Price" maxlength="5" #highPriceFilter/>
+      <div class="col s12 error">{{error}}</div>
+    </div>
+    <div class="save-button" (click)="savePrice(highPriceFilter.value,lowPriceFilter.value)">Save</div>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>discount</mat-expansion-panel-header>
+    <mat-panel-description class="filter-checkox">
+      <mat-checkbox *ngFor="let value of filters.discountFilter" (click)="selectValue('discountFilter',value)">{{value}}%</mat-checkbox>
+    </mat-panel-description>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Pattern
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-panel-description class="filter-checkox">
+      <mat-checkbox *ngFor="let value of filters.patternFilter" (click)="selectValue('patternFilter',value)">{{value}}</mat-checkbox>
+    </mat-panel-description>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Color</mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-panel-description class="filter-checkox">
+      <mat-checkbox *ngFor="let color of filters.primaryColorFilter" (click)="selectValue('primaryColorFilter',color)">{{color}}</mat-checkbox>
+    </mat-panel-description>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header> Fabric</mat-expansion-panel-header>
+    <mat-panel-description class="filter-checkox">
+      <mat-checkbox *ngFor="let value of filters.fabricFilter" (click)="selectValue('fabricFilter',value)">{{value}}</mat-checkbox>
+    </mat-panel-description>
+  </mat-expansion-panel>
+
+</mat-accordion>

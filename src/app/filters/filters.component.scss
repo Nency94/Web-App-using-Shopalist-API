@@ -1,0 +1,67 @@
+.border-bottom {
+    border-bottom: 4px solid #c2185b;
+    margin: 0;
+}
+
+.pt-15 {
+    padding-top: 15px;
+}
+
+.filter-heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter-checkox {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .mat-checkbox {
+        width: calc(50% - 3px);
+        white-space: normal;
+        text-overflow: unset;
+        overflow: hidden;
+    }
+}
+
+.text-capitlize {
+    text-transform: capitalize;
+}
+
+.filters-values {
+    display: flex;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+    li {
+        display: flex;
+        justify-content: center;
+        border: 2px solid  #c2185b;
+        border-radius: 30px;
+        padding: 5px;
+        margin: 2px;
+        text-transform: capitalize;
+        i{
+            color:  #c2185b;
+            cursor: pointer;
+        }
+    }
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.md-10{
+    margin: 10px;
+}
+
+.save-button{
+    text-align: right;
+    font-weight: 900;
+    color: #c2185b;
+    cursor: pointer;
+}
+
+.error{
+    color: red;
+}

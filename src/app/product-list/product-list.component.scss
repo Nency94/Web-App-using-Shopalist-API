@@ -1,0 +1,54 @@
+.fixed-button {
+    position: fixed;
+    bottom: 100px;
+    right: 100px;
+}
+
+.sale-price {
+    color: red;
+    margin-right: 10px;
+    position: relative;
+    &:before {
+        content: "";
+        background-color: red;
+        height: 1px;
+        top: 50%;
+        width: 100%;
+        position: absolute;
+    }
+}
+
+.card-action{
+    text-align: left;
+}
+
+.details{
+    text-align: left;
+}
+
+.list_view{
+    border-bottom: 2px  solid #c2185b;
+    cursor: pointer;
+}
+
+.view-icons{
+    display: flex;
+    justify-content: flex-end;
+    .material-icons{
+        padding: 10px;
+        font-size: 30px;
+        cursor: pointer;
+    }
+    .selected{
+        color: #c2185b;
+        border: 3px solid #c2185b;
+    }
+}
+
+.hidden{
+    display: none;
+}
+
+.card{
+    cursor: pointer;
+}

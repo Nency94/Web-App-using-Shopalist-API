@@ -1,0 +1,17 @@
+<div class="filter-modal-wrapper">
+  <div class="modal-content">
+    <!-- Header starts-->
+    <div class="modal-header">
+      <div class="modal-heading text-center">
+        <div class="pull-right">
+          <span class="close-icon" (click)="cancel()">x</span>
+        </div>
+      </div>
+      <div class="imageDiv">
+        <i class="material-icons" (click)="toggleImages('back')">chevron_left</i>
+        <img src={{data[index]}}/> 
+        <i class="material-icons" (click)="toggleImages('forward')">chevron_right</i>
+      </div>
+    </div>
+  </div>
+</div>

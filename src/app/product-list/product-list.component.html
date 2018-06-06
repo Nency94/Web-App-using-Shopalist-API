@@ -1,0 +1,44 @@
+<div class="row" *ngIf="list && list.length>0" #containerDiv>
+  <div class="view-icons">
+    <i class="material-icons" [ngClass]="{'selected' : view== 'grid'}" (click)="view='grid'">apps</i>
+    <i class="material-icons" [ngClass]="{'selected' : view== 'list'}" (click)="view='list'">format_list_bulleted</i>
+  </div>
+
+  <div [ngClass]="{'hidden' : view!= 'grid'}">
+    <div class="col m3" *ngFor="let product of list">
+      <div class="card medium" (click)="open(product.images)">
+        <div class="card-image">
+          <img src="{{product.imageUrl}}">
+          <span class="card-title"></span>
+        </div>
+        <div class="card-content">
+          <p>{{product.title}}</p>
+        </div>
+        <div class="card-action"> Price:
+          <span class="sale-price">{{product.salePrice}}</span>{{product.offerPrice}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div [ngClass]="{'hidden' : view!= 'list'}">
+    <ul *ngFor="let product of list" class="col s12">
+      <li class="list_view row"  (click)="open(product.images)">
+        <div class="image-div col s4" height="150">
+          <img src="{{product.imageUrl}}" />
+        </div>
+        <div class="details col s8">
+          <h4>{{product.title}}</h4>
+          <p>{{product.brandName}}</p>
+          <div class="card-action"> Price:
+            <span class="sale-price">{{product.salePrice}}</span>{{product.offerPrice}}
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<a class="btn-floating btn-large waves-effect waves-light pink fixed-button"  *ngIf="list && list.length>0" (click)="ScrollToTop()">
+    <i class="material-icons">expand_less</i>
+</a>

@@ -1,0 +1,84 @@
+.filter-modal-wrapper {
+    max-width: 750px;
+    width: 100%;
+    .modal-footer {
+        padding: 5px;
+        .btn-default {
+            margin-right: 30px;
+        }
+    }
+}
+
+.filter-modal-wrapper {
+    overflow: hidden !important;
+}
+
+.reminder-form-wrapper {
+    margin: 20px;
+    padding: 10px;
+}
+
+.check-box {
+    padding-top: 15px;
+}
+
+.heading-wrapper :not(.sub-title) {
+    font-size: 14px;
+    color: #666666;
+    font-weight: 700;
+}
+
+.sub-title {
+    color: #666666;
+    font-size: 14px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+}
+
+.field-wrapper {
+    margin-top: 25px;
+}
+
+.modal-content {
+    position: relative;
+    .modal-heading {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+        text-align: center;
+        border-radius: 50%;
+        background-color: #c2185b;
+        color: #fff;
+        font-weight: 900;
+        cursor: pointer;
+        z-index: 999;
+    }
+    img{
+        height: auto;
+        max-width: 550px;
+        max-height: 500px;
+        width: auto;
+    }
+    .imageDiv{
+        display: flex;
+        align-items: center;
+        min-height: 500px;
+        height: 500px;
+        justify-content: space-between;
+        .material-icons{
+            font-size: 20px;
+            color: #fff;
+            background-color: #666666;
+            opacity: 0.5;
+            cursor: pointer;
+            height: 20px;
+        }
+    }
+}
+
+.mat-dialog-container{
+    margin: auto;
+}
