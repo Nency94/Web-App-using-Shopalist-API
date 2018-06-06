@@ -11,7 +11,7 @@ interface HeaderInterface {
 
 @Injectable()
 export class HttpService {
-  private baseUrl = environment.baseUrl;
+  baseUrl = environment.baseUrl;
   constructor(private http: Http) { }
 
   /**

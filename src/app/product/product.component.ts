@@ -11,14 +11,9 @@ import { RepositionScrollStrategy } from '@angular/cdk/overlay';
 
 export class ProductComponent {
 
+
   @ViewChild('filter') filter;
-  error: string;
-  isLoading: boolean;
-  ItemsInfo: any;
-  productList: any = [];
-  sortOrder: { key: string; value: string; }[];
-  sortField: { key: string; value: string; }[];
-  product = {
+  product: any = {
     index: 0,
     limit: environment.limit,
     mode: environment.mode,
@@ -27,7 +22,14 @@ export class ProductComponent {
     sortOrder: '',
     sortField: ''
   };
-
+  error: string;
+  isLoading: boolean;
+  ItemsInfo: any;
+  productList: any = [];
+  sortOrder: { key: string; value: string; }[];
+  sortField: { key: string; value: string; }[];
+  sortFieldModel: {};
+  sortOrderModel: {};
   constructor(public service: AuthService) { }
 
   ngOnInit() {
@@ -102,7 +104,7 @@ export class ProductComponent {
 
   search(value) {
     this.init();
-    this.filter.clearAll();        
+    this.filter.clearAll();
     this.getProduct(value);
   }
 
