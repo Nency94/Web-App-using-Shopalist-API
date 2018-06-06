@@ -16,6 +16,7 @@
         </div>
         <div class="card-action"> Price:
           <span class="sale-price">{{product.salePrice}}</span>{{product.offerPrice}}
+          <span class="discount" *ngIf="product.discount">{{product.discount}}</span>
         </div>
       </div>
     </div>
@@ -23,7 +24,7 @@
 
   <div [ngClass]="{'hidden' : view!= 'list'}">
     <ul *ngFor="let product of list" class="col s12">
-      <li class="list_view row"  (click)="open(product.images)">
+      <li class="list_view row" (click)="open(product.images)">
         <div class="image-div col s4" height="150">
           <img src="{{product.imageUrl}}" />
         </div>
@@ -32,6 +33,7 @@
           <p>{{product.brandName}}</p>
           <div class="card-action"> Price:
             <span class="sale-price">{{product.salePrice}}</span>{{product.offerPrice}}
+            <span class="discount" *ngIf="product.discount">{{product.discount}}</span>
           </div>
         </div>
       </li>
@@ -39,6 +41,6 @@
   </div>
 </div>
 
-<a class="btn-floating btn-large waves-effect waves-light pink fixed-button"  *ngIf="list && list.length>0" (click)="ScrollToTop()">
-    <i class="material-icons">expand_less</i>
+<a class="btn-floating btn-large waves-effect waves-light pink fixed-button" *ngIf="list && list.length>0" (click)="ScrollToTop()">
+  <i class="material-icons">expand_less</i>
 </a>

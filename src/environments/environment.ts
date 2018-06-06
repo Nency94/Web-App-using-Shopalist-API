@@ -12,7 +12,7 @@ export const environment = {
     key: 'price​',
     value: 'Price',
   }, {
-    key: 'discountFilter',
+    key: 'discounts',
     value: 'discountFilter'​,
   }, {
     key: 'newArrivalsRank​',
