@@ -33,7 +33,7 @@
           <p>{{product.brandName}}</p>
           <div class="card-action"> Price:
             <span class="sale-price">{{product.salePrice}}</span>{{product.offerPrice}}
-            <span class="discount" *ngIf="product.discount">{{product.discount}}</span>
+            <span class="discount" *ngIf="product.discount">-{{product.discount}}%</span>
           </div>
         </div>
       </li>
