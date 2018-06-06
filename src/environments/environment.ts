@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  baseUrl: 'http://api.shortlyst.com/v1',
+  baseUrl: 'https://api.shortlyst.com/v1',
   apiKey: 'e3ebd9fdf9704775c7fd6bb4f20e1798',
   merchant: 'flipkart',
   mode: 'full',
