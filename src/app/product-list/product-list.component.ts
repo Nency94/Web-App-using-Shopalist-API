@@ -21,7 +21,6 @@ export class ProductListComponent {
   ngOnInit() { }
 
   ScrollToTop() {
-    console.log(this.document);
     window.scrollTo(0, 0);
   }
 
@@ -33,7 +32,6 @@ export class ProductListComponent {
       data: content,
     });
     dialogRef.afterClosed().subscribe((data) => {
-      console.log(data);
     });
   }
 

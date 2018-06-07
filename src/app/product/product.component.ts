@@ -53,7 +53,6 @@ export class ProductComponent {
 
     this.service.searchApi(params).subscribe(
       (data) => {
-        console.log(data)
         let response = JSON.parse(data['_body']);
         this.productList = this.productList.concat(response.productList);
         this.product.index += this.product.limit;
@@ -61,7 +60,6 @@ export class ProductComponent {
         this.isLoading = false;
       },
       error => {
-        console.log(error)
         this.isLoading = false;
         this.error = "Please Check Your Internet Conection" || error.statusText;
       }
@@ -104,7 +102,7 @@ export class ProductComponent {
 
   search(value) {
     this.init();
-    this.filter.clearAll();
+    this.filter.clearValues();
     this.getProduct(value);
   }
 

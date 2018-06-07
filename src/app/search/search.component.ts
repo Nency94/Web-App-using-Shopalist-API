@@ -11,8 +11,4 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  onEnter(value) {
-    console.log(value);
-  }
 }

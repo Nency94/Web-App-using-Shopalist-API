@@ -15,7 +15,6 @@ export class ImageModalComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.data, 'images');
   }
 
   cancel() {
@@ -33,7 +32,6 @@ export class ImageModalComponent implements OnInit {
       this.index++;
       this.index %= this.data.length;
     }
-    console.log(this.index, 'index');
 
   }
 }

@@ -57,7 +57,6 @@ export class FiltersComponent implements OnInit {
   }
 
   clearAll() {
-    debugger
     this.isLoading = true;
     this.applyFilter = {
       genderFilter: null,
@@ -119,5 +118,19 @@ export class FiltersComponent implements OnInit {
     this.applyFilter.highPriceFilter = null;
     this.emitEvent();
   };
+
+  clearValues() {
+    this.applyFilter = {
+      genderFilter: null,
+      silhouetteFilter: null,
+      subSilhouetteFilter: null,
+      discountFilter: null,
+      patternFilter: null,
+      primaryColorFilter: null,
+      fabricFilter: null,
+      highPriceFilter: null,
+      lowPriceFilter: null
+    };
+  }
 
 }
