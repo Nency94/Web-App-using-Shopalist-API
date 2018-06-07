@@ -58,17 +58,7 @@ export class FiltersComponent implements OnInit {
 
   clearAll() {
     this.isLoading = true;
-    this.applyFilter = {
-      genderFilter: null,
-      silhouetteFilter: null,
-      subSilhouetteFilter: null,
-      discountFilter: null,
-      patternFilter: null,
-      primaryColorFilter: null,
-      fabricFilter: null,
-      highPriceFilter: null,
-      lowPriceFilter: null
-    };
+    this.clearValues();
     this.emitEvent();
   }
 
