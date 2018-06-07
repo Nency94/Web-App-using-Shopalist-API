@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductComponent } from './product/product.component';
 import { routing } from './app.route';
-import { SearchComponent } from './search/search.component';
 import { FiltersComponent } from './filters/filters.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { FormsModule } from '@angular/forms';
@@ -23,7 +22,6 @@ import { ImageModalComponent } from './image-model/image-model.component';
   declarations: [
     AppComponent,
     ProductComponent,
-    SearchComponent,
     FiltersComponent,
     ProductListComponent,
     ImageModalComponent,
